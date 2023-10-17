@@ -4,12 +4,12 @@
 
 import cmd
 from models import storage
-from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
 from models.amenity import Amenity
 from models.place import Place
+from models.base_model import BaseModel
+from models.city import City
+from models.user import User
+from models.state import State
 from models.review import Review
 
 c_list = {"BaseModel": BaseModel,
@@ -39,14 +39,14 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         return False
 
-    def do_quit(self, arg):
-        """exit the program"""
-        return True
-
     def do_EOF(self, arg):
         """exit the program"""
         return True
-
+              
+   def do_quit(self, arg):
+        """exit the program"""
+        return True
+          
     def do_create(self, line):
         """creates a new instance of BaseModel, saves it and prints the id"""
         args = line.split()
